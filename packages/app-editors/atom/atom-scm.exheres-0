@@ -13,6 +13,7 @@ deeply customizable, but still approachable using the default configuration.
 HOMEPAGE="http://www.atom.io/"
 LICENCES="MIT"
 SLOT="0"
+PLATFORMS="~amd64 ~x86"
 MYOPTIONS=""
 
 DEPENDENCIES="
