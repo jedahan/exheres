@@ -1,0 +1,27 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user="atom" pn="atom" ]
+
+SUMMARY="A hackable text editor for the 21st Century"
+DESCRIPTION="
+Atom is a hackable text editor for the 21st century, built on atom-shell, and 
+based on everything we love about our favorite editors. We designed it to be 
+deeply customizable, but still approachable using the default configuration.
+"
+
+HOMEPAGE="http://www.atom.io/"
+LICENCES="MIT"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+	gnome-desktop/libgnome-keyring
+	dev-util/atom-shell
+	net-libs/node[>=0.10][npm]
+"
+
+src_build() {
+    edo script/build --verbose --build-dir $TEMP
+}
