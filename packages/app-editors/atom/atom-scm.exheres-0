@@ -23,5 +23,9 @@ DEPENDENCIES="
 "
 
 src_build() {
-    edo script/build --verbose --build-dir $TEMP
+    edo script/build --build-dir $TEMP
+}
+
+src_install() {
+    edo script/grunt install --install-dir $IMAGE
 }
