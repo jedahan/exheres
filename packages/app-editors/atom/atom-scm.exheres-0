@@ -13,7 +13,7 @@ deeply customizable, but still approachable using the default configuration.
 HOMEPAGE="http://www.atom.io/"
 LICENCES="MIT"
 SLOT="0"
-PLATFORMS="~amd64 ~x86"
+PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
@@ -23,11 +23,10 @@ DEPENDENCIES="
 "
 
 src_compile() {
-    esandbox allow_net "inet:0.0.0.0@0"
     edo script/bootstrap
-    edo script/build --build-dir $TEMP
+    edo script/build --build-dir "${TEMP}"
 }
 
 src_install() {
-    edo script/grunt install --install-dir $IMAGE
+    edo script/grunt install --install-dir "${IMAGE}"
 }
