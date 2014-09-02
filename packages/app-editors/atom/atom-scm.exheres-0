@@ -23,7 +23,9 @@ DEPENDENCIES="
 "
 
 src_compile() {
-    edo ./script/build --build-dir $TEMP
+    esandbox allow_net "inet:0.0.0.0@0"
+    edo script/bootstrap
+    edo script/build --build-dir $TEMP
 }
 
 src_install() {
