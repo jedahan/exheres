@@ -22,8 +22,8 @@ DEPENDENCIES="
 	dev-lang/node[>=0.10][npm]
 "
 
-src_build() {
-    edo script/build --build-dir $TEMP
+src_compile() {
+    edo ./script/build --build-dir $TEMP
 }
 
 src_install() {
