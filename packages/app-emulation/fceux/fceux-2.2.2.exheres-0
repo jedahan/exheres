@@ -1,0 +1,25 @@
+require scons sourceforge [ project=fceultra suffix=src.tar.gz ]
+
+SUMMARY="A portable Famicom/NES emulator, an evolution of the original FCE Ultra"
+HOMEPAGE="http://fceux.com/"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/lua
+        media-libs/SDL[X]
+        x11-dri/mesa
+        x11-libs/gtk+:2
+        sys-libs/zlib
+        gnome-desktop/zenity
+"
+
+src_install() {
+  dobin bin/${PN}
+  doman documentation/${PN}.6
+  dodoc -r Authors changelog.txt bin/fceux.chm documentation
+}
+
