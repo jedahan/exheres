@@ -10,7 +10,7 @@ PLATFORMS="~amd64"
 DEPENDENCIES="
     build+run:
         x11-libs/gtk+:2
-        x11-libs/goocanvas
+        x11-libs/goocanvas:0
     run:
         net-misc/curl
 "
