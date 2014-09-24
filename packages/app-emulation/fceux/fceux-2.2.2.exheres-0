@@ -9,6 +9,7 @@ HOMEPAGE="http://fceux.com/"
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
@@ -25,3 +26,4 @@ src_install() {
     doman documentation/${PN}.6
     dodoc -r Authors changelog.txt bin/fceux.chm documentation
 }
+

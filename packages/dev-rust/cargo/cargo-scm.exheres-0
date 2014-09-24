@@ -56,3 +56,4 @@ src_prepare() {
 src_configure() {
     edo ./configure --prefix=/usr
 }
+
