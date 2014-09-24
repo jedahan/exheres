@@ -17,7 +17,7 @@ SCM_rust_url_REPOSITORY="https://github.com/servo/rust-url.git"
 SCM_semver_REPOSITORY="https://github.com/rust-lang/semver.git"
 SCM_toml_rs_REPOSITORY="https://github.com/alexcrichton/toml-rs.git"
 
-SNAPSHOT_DATE="2014-09-03"
+SNAPSHOT_DATE="2014-09-19"
 
 require github [ user="rust-lang" ]
 
