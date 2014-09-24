@@ -21,8 +21,7 @@ DEPENDENCIES="
 "
 
 src_install() {
-  dobin bin/${PN}
-  doman documentation/${PN}.6
-  dodoc -r Authors changelog.txt bin/fceux.chm documentation
+    dobin bin/${PN}
+    doman documentation/${PN}.6
+    dodoc -r Authors changelog.txt bin/fceux.chm documentation
 }
-
