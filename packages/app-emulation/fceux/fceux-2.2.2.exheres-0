@@ -13,11 +13,11 @@ PLATFORMS="~amd64"
 DEPENDENCIES="
     build+run:
         dev-lang/lua
+        gnome-desktop/zenity
         media-libs/SDL[X]
+        sys-libs/zlib
         x11-dri/mesa
         x11-libs/gtk+:2
-        sys-libs/zlib
-        gnome-desktop/zenity
 "
 
 src_install() {
