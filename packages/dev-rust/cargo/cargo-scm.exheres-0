@@ -1,4 +1,5 @@
-# Copyright 2014 Jorge Aparicio
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+#   based on rust-scm by Jorge Aparicio
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_SECONDARY_REPOSITORIES="

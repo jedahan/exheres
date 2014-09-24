@@ -1,3 +1,6 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
 require scons sourceforge [ project=fceultra suffix=src.tar.gz ]
 
 SUMMARY="A portable Famicom/NES emulator, an evolution of the original FCE Ultra"
