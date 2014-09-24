@@ -9,6 +9,7 @@ HOMEPAGE="http://gpredict.oz9aec.com/"
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS=""
 
 DEPENDENCIES="
     build+run:
@@ -17,3 +18,4 @@ DEPENDENCIES="
     run:
         net-misc/curl
 "
+
