@@ -14,7 +14,6 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         dev-lang/lua
-        gnome-desktop/zenity
         media-libs/SDL[X]
         sys-libs/zlib
         x11-dri/mesa
