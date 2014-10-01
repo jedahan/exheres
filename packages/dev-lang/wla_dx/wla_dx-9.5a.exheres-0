@@ -1,0 +1,21 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Yet Another GB-Z80/Z80/6502/65C02/6510/65816/HUC6280/SPC-700 Multi Platform Cross Assembler Package"
+
+DOWNLOADS="http://www.villehelin.com/${PN}_${PV}.tar.gz"
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+WORK="${WORKBASE}/wla_dx_9.5"
+
+src_compile() {
+  env -u CFLAGS sh unix.sh $(cat /proc/cpuinfo | grep "cpu cores" -m 1 | grep -o -E [0-9]*$)
+}
+
+src_install() {
+  dodoc "${WORK}"/{README,CHANGELOG}
+  dobin "${WORK}"/binaries/*
+}
+
