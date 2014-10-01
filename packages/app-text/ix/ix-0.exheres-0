@@ -1,0 +1,46 @@
+# Copyright 2014 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public Licence v2
+
+SUMMARY="Nerdy pastebin"
+HOMEPAGE="http://ix.io"
+
+DESCRIPTION="
+GET:
+    http://ix.io/{ID,ID/LANG,user/USER}
+
+POST:
+
+    http://ix.io?f:N=[&name:N=][&ext:N=][&login=&token=[&rm=][&id:N=]
+
+    f:N       urlencoded contents. required.
+    name:N    filename. optional.
+    ext:N     filetype. optional.
+    login     optional. First time creates a login.
+    token     required if login. Don't use an important password, I suck at security.
+    rm        id to delete. login required.
+    id:N      id to replace. login required
+        where N is a unique number within request. (This allows you to post multiple files at once.)
+"
+
+DOWNLOADS=" ${HOMEPAGE} -> README
+            ${HOMEPAGE}/client -> ${PN}"
+
+BUGS_TO="jonathan@jonathan.is"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    run:
+        dev-lang/python
+"
+
+WORK="${WORKBASE}"
+
+src_install() {
+    dobin "${FETCHEDDIR}"/${PN}
+    dodoc "${FETCHEDDIR}"/README
+}
+
