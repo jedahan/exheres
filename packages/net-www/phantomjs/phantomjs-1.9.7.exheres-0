@@ -1,0 +1,27 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public 
+
+require github [ user=ariya ]
+
+SUMMARY="A headless WebKit scriptable with a JavaScript API"
+HOMEPAGE="http://phantomjs.org/"
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+	    app-arch/unzip
+	    dev-util/pkg-config
+    build+run:
+        dev-libs/icu
+	    dev-libs/openssl
+	    media-libs/fontconfig
+	    media-libs/freetype
+"
+
+src_compile() {
+  edo ./build.sh --confirm
+}
