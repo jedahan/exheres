@@ -1,0 +1,24 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public
+
+require github [ user=lolilolicon ]
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        media/libav
+        x11-apps/xrectsel
+        x11-apps/xwininfo
+        x11-libs/libX11
+"
+
+WORK="${WORKBASE}/${PNV//f/F}"
+
+src_prepare() {
+  edo ./bootstrap
+  default
+}
