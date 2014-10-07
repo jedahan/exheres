@@ -1,0 +1,25 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="ACME is a free crossassembler, that can produce code for the 6502, 65c02 and 65816 processors."
+HOMEPAGE="http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/"
+
+MY_PNV="${PNV//[.-]/}"
+
+DOWNLOADS="${HOMEPAGE}current/${MY_PNV}src.tar.bz2"
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+WORK="${WORKBASE}/${MY_PNV}"
+
+src_compile() {
+  edo cd src
+  default
+}
+
+src_install() {
+  dobin src/acme
+  default
+}
