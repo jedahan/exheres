@@ -17,8 +17,9 @@ DEPENDENCIES=""
 WORK="${WORKBASE}/${MY_PNV}"
 
 src_compile() {
-  edo cd src
+  edo pushd src
   default
+  edo popd
 }
 
 src_install() {
