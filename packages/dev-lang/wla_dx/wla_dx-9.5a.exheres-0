@@ -12,6 +12,8 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
+
+DEPENDENCIES=""
 WORK="${WORKBASE}/wla_dx_9.5"
 
 src_compile() {
