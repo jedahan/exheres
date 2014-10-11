@@ -19,7 +19,7 @@ MYOPTIONS=""
 DEPENDENCIES="
     build:
         dev-lang/node[>=0.10][npm]
-        gnome-desktop/libgnome-keyring
+        gnome-desktop/libgnome-keyring:1
 "
 
 src_compile() {
