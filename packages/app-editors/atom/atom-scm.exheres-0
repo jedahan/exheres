@@ -9,7 +9,7 @@ Atom is a hackable text editor for the 21st century, built on atom-shell, and
 based on everything we love about our favorite editors. We designed it to be
 deeply customizable, but still approachable using the default configuration.
 "
-HOMEPAGE="http://www.atom.io/"
+HOMEPAGE="http://www.${PN}.io/"
 
 LICENCES="MIT"
 SLOT="0"
