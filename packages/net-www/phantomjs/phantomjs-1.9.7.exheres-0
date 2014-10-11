@@ -14,12 +14,12 @@ MYOPTIONS=""
 DEPENDENCIES="
     build:
 	    app-arch/unzip
-	    dev-util/pkg-config
+        dev-util/pkg-config
     build+run:
         dev-libs/icu
-	    dev-libs/openssl
-	    media-libs/fontconfig
-	    media-libs/freetype
+        dev-libs/openssl
+        media-libs/fontconfig
+        media-libs/freetype
 "
 
 src_compile() {
