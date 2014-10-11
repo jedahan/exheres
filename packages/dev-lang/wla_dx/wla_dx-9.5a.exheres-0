@@ -17,7 +17,7 @@ DEPENDENCIES=""
 WORK="${WORKBASE}/wla_dx_9.5"
 
 src_compile() {
-  env -u CFLAGS sh unix.sh $(cat /proc/cpuinfo | grep "cpu cores" -m 1 | grep -o -E [0-9]*$)
+  env -u CFLAGS sh unix.sh ${EXJOBS:-1}
 }
 
 src_install() {
