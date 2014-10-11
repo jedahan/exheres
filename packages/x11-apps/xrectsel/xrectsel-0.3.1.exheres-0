@@ -1,7 +1,7 @@
 # Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public
 
-require github [ user=lolilolicon ]
+require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 ] ] github [ user=lolilolicon ]
 
 LICENCES="GPL-3"
 SLOT="0"
@@ -13,7 +13,3 @@ DEPENDENCIES="
         x11-libs/libX11
 "
 
-src_prepare() {
-  edo ./bootstrap
-  default
-}
