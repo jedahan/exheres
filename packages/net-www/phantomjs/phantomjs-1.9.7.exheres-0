@@ -6,7 +6,7 @@ require github [ user=ariya ]
 SUMMARY="A headless WebKit scriptable with a JavaScript API"
 HOMEPAGE="http://phantomjs.org/"
 
-LICENCES="BSD"
+LICENCES="BSD-3"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
