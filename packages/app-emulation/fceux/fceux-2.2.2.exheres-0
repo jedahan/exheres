@@ -14,7 +14,7 @@ MYOPTIONS=""
 DEPENDENCIES="
     build+run:
         dev-lang/lua
-        media-libs/SDL[X]
+        media-libs/SDL:0[X]
         sys-libs/zlib
         x11-dri/mesa
         x11-libs/gtk+:2
