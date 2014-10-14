@@ -6,7 +6,7 @@ require github [ user=postmodern tag=v${PV} ]
 SUMMARY="Changes the current Ruby."
 HOMEPAGE="https://github.com/postmodern/chruby"
 
-LICENCES="GPL-2"
+LICENCES="MIT"
 SLOT="0"
 PLATFORMS="~amd64"
 
