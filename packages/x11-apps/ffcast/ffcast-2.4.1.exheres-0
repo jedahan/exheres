@@ -18,7 +18,5 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}/${PNV//f/F}"
 
-src_prepare() {
-  eautoreconf
-  default
-}
+AT_M4DIR=
+AT_NO_RECURSIVE=yes
