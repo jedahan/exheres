@@ -3,6 +3,7 @@
 includes hit software such as:
 
   * acme - an assembler, for the 6502 (commodore 64) and more
+  * chruby - change ruby
   * fceux - a nintendo/famicom emulator
   * ffcast - record a screencast simply and quickly
   * ix - a nerdy pastebin cli
