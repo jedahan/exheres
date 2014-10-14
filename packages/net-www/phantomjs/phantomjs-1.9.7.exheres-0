@@ -19,7 +19,7 @@ DEPENDENCIES="
         dev-libs/icu
         dev-libs/openssl
         media-libs/fontconfig
-        media-libs/freetype
+        media-libs/freetype:2
 "
 
 src_compile() {
