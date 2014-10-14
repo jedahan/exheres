@@ -1,0 +1,21 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=postmodern tag=v${PV} ]
+
+SUMMARY="Installs Ruby, JRuby, Rubinius, MagLev or MRuby"
+HOMEPAGE="https://github.com/postmodern/ruby-install"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+
+MYOPTIONS=""
+DEPENDENCIES="
+    run:
+        dev-lang/ruby:2.1
+"
+
+RESTRICT=test
+
+DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=${IMAGE}/usr )

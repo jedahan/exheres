@@ -7,6 +7,7 @@ includes hit software such as:
   * fceux - a nintendo/famicom emulator
   * ffcast - record a screencast simply and quickly
   * ix - a nerdy pastebin cli
+  * ruby-install - installs ruby/jruby/mruby/rubinius/maglev
   * wla_dx - more 6502 assemblers, focused on the nintendo
   * xrectsel - select rectangles in X!
   * atom - github's text editor. just kidding! it's broken :(
