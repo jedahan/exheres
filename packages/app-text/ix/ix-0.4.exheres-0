@@ -34,7 +34,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     run:
-        dev-lang/python
+        dev-lang/python:*
 "
 
 WORK="${WORKBASE}"
