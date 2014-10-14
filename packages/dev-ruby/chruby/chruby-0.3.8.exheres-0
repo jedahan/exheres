@@ -19,3 +19,10 @@ DEPENDENCIES="
 RESTRICT=test
 
 DEFAULT_SRC_INSTALL_PARAMS=( PREFIX=${IMAGE}/usr )
+
+pkg_postinst() {
+    einfo "You probably want to add the following to ~/.bashrc or ~/.zshrc:"
+    einfo ""
+    einfo "source /usr/share/${PN}/${PN}.sh"
+}
+
