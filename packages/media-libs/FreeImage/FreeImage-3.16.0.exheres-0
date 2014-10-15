@@ -1,0 +1,66 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Copyright 2009 Daniel Mierswa <impulze@impulze.org>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PNV="${PNV//[.-]/}"
+
+require sourceforge [ project=freeimage suffix=zip ]
+
+SUMMARY="A library to access popular image formats."
+DESCRIPTION="An Open Source library project for developers who would like to
+support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as
+needed by today's multimedia applications. It is easy to use, fast and
+multithreading safe."
+
+LICENCES="|| ( GPL-2 FIPL-1.0 )"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+REMOTE_IDS="freshmeat:$PN sourceforge:$PN"
+
+UPSTREAM_CHANGELOG="$HOMEPAGE/changeslog.html"
+UPSTREAM_DOCUMENTATION="
+$HOMEPAGE/faq.html         [[ lang = en description = [ FAQ ] ]]
+$HOMEPAGE/fip/index.html   [[ lang = en description = [ C++ Wrapper Manual ] ]]
+$HOMEPAGE/fnet/index.html  [[ lang = en description = [ C# Wrapper Manual ] ]]
+"
+
+DEPENDENCIES="
+    build:
+        app-arch/unzip
+        dev-util/pkg-config
+
+    build+run:
+        media-libs/openexr
+        media-libs/libmng
+        media-libs/libpng
+        media-libs/libraw
+        media-libs/libwebp
+        media-libs/OpenJPEG:0
+        media-libs/tiff
+        sys-libs/zlib
+"
+
+WORK="$WORKBASE/$PN"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}_unbundle.patch" )
+DEFAULT_SRC_PREPARE_PATCHES+=( "${FILES}/${PNV}_disable-some-plugins.patch" )
+DEFAULT_SRC_COMPILE_PARAMS+=( -f Makefile.gnu )
+DEFAULT_SRC_INSTALL_EXTRA_DOCS+=( Whatsnew.txt )
+
+src_prepare() {
+  # Remove private functions from local fork of libJPEG
+  edo sed -e '/JPEG lossless transformation routines/,/Image manipulation toolkit/{//!d}' -i Source/FreeImage.h
+  # make gcc "prefer" system-wide headers over the internal ones
+  edo rm -r Source/{OpenEXR,Lib{OpenJPEG,PNG,RawLite,TIFF4,WebP},ZLib}
+  default
+}
+
+src_install() {
+    default
+
+    dosym libfreeimage.so.${PV} /usr/${LIBDIR}/libfreeimage.so
+    dodoc -r Examples
+}
+
