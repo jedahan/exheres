@@ -18,6 +18,9 @@ DEPENDENCIES=""
 WORK="${WORKBASE}/wla_dx_9.5"
 
 src_compile() {
+  # TODO: recreate unix.sh in this exheres
+  # theres a small ordered set of toolchain
+  # build that need to happen for this to work
   env -u CFLAGS sh unix.sh ${EXJOBS:-1}
 }
 
