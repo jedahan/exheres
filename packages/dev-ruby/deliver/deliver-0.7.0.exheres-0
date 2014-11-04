@@ -1,7 +1,7 @@
 # Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public License v2
 
-require gem github [ user=gerhard ]
+require gem github [ user=gerhard tag=v${PV} ]
 
 SUMMARY="Pure bash deployment tool"
 
