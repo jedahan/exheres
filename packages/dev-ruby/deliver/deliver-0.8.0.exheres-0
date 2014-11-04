@@ -1,0 +1,11 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+require gem github [ user=gerhard ]
+
+SUMMARY="Pure bash deployment tool"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+
