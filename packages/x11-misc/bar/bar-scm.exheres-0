@@ -14,3 +14,5 @@ DEPENDENCIES="
     build:
         dev-lang/perl:* [[ description = [ pod2man is used to build the manpage ] ]]
 "
+
+DEFAULT_SRC_INSTALL_EXCLUDE=( "README.pod" )
