@@ -1,0 +1,16 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public
+
+require github [ user=LemonBoy ]
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        x11-libs/libxcb
+    build:
+        dev-lang/perl:* [[ description = [ pod2man is used to build the manpage ] ]]
+"
