@@ -1,0 +1,21 @@
+# Copyright 2014 Jonathan Dahan
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=mossmann project=hackrf tag=v${PV} ]
+
+SUMMARY="HackRF support for gr-osmocom"
+HOMEPAGE="https://greatscottgadgets.com/hackrf/"
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+WORK="${WORK}/hackrf-${PV}/host/${PN}"
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libusb:1
+"
+
+BUGS_TO="jonathan@jonathan.is"
