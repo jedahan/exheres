@@ -11,7 +11,7 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
 
-WORK="${WORK}/hackrf-${PV}/host/${PN}"
+WORK="${WORKBASE}/hackrf-${PV}/host/${PN}"
 
 DEPENDENCIES="
     build+run:
