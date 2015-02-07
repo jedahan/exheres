@@ -3,6 +3,9 @@
 
 require github [ user=LemonBoy ]
 
+SUMMARY="lightweight bar entirely based on xcb"
+HOMEPAGE="https://github.com/lemonboy/bar"
+
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"

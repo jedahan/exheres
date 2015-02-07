@@ -3,6 +3,9 @@
 
 require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 ] ] github [ user=lolilolicon ]
 
+SUMMARY="interactively select a screen region and output the geometry for external commands (like FFMPEG)"
+HOMEPAGE="https://github.com/lolilolicon/ffcast"
+
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"

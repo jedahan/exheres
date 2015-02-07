@@ -3,6 +3,9 @@
 
 require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 ] ] github [ user=lolilolicon ]
 
+SUMMARY="print the geometry of a rectangular screen region"
+HOMEPAGE="https://github.com/lolilolicon/xrectsel"
+
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"

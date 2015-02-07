@@ -4,6 +4,7 @@
 require gem github [ user=gerhard tag=v${PV} ]
 
 SUMMARY="Pure bash deployment tool"
+HOMEPAGE="https://github.com/gerhard/deliver"
 
 LICENCES="MIT"
 SLOT="0"
