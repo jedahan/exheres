@@ -1,0 +1,49 @@
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public Licesnse v2
+
+require github [ pn="io.js" tag="v${PV}" ]
+
+SUMMARY="A friendly fork of Node.js with an open governance model"
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-lang/python:*[<3.0]
+    build+run:
+        dev-libs/libpthread-stubs
+        sys-libs/zlib
+        dev-libs/libuv[>=1.4.0]
+        virtual/libssl
+"
+
+SRC_CONFIGURE_PARAMS=(
+    --prefix=/usr
+    --shared-libuv
+    --shared-openssl
+    --shared-zlib
+)
+
+src_configure() {
+    edo ./configure "${SRC_CONFIGURE_PARAMS[@]}"
+}
+
+src_install() {
+    default
+
+    if [[ $LIBDIR != lib ]]; then
+        edo mv "${IMAGE}/usr/lib" "${IMAGE}/usr/${LIBDIR}"
+        dosym "/usr/${LIBDIR}/node_modules/npm/bin/npm-cli.js" "/usr/bin/npm"
+    fi
+}
+
+src_test() {
+    esandbox allow_net "inet:0.0.0.0@0"
+    esandbox allow_net "inet:0.0.0.0@12346"
+    esandbox allow_net "unix:${WORK}/test/tmp/test.sock"
+
+    emake test
+}
+
