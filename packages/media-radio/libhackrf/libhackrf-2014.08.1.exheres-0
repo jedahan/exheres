@@ -1,7 +1,8 @@
-# Copyright 2014 Jonathan Dahan
+# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public License v2
 
-require cmake github [ user=mossmann pn=hackrf tag=v${PV} ]
+MY_PN="hackrf"
+require cmake github [ user=mossmann tag=v${PV} ]
 
 SUMMARY="HackRF support for gr-osmocom"
 HOMEPAGE="https://greatscottgadgets.com/hackrf/"
