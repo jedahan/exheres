@@ -1,7 +1,7 @@
 # Copyright 2014 Jonathan Dahan
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user=mossmann pn=hackrf tag=v${PV} ]
+require cmake github [ user=mossmann pn=hackrf tag=v${PV} ]
 
 SUMMARY="HackRF support for gr-osmocom"
 HOMEPAGE="https://greatscottgadgets.com/hackrf/"
@@ -11,11 +11,18 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
 
-WORK="${WORK}/host/${PN}"
-
 DEPENDENCIES="
     build+run:
         dev-libs/libusb:1
 "
 
 BUGS_TO="jonathan@jonathan.is"
+
+WORK="${WORK}/host/${PN}"
+CMAKE_SOURCE="${WORK}/host/${PN}"
+
+CMAKE_SRC_CONFIGURE_PARAMS=( -DLIB_INSTALL_DIR:STRING=${LIBDIR} )
+
+src_prepare(){
+    edo sed -e 's|lib/pkgconfig|${LIB_INSTALL_DIR}/pkgconfig|' -i CMakeLists.txt
+}
