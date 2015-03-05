@@ -13,6 +13,7 @@ includes hit software such as:
   * kryoflux-bin - read old floppy disks with kryoflux 
   * libhackrf - hackrf sdr library for gnuradio
   * libvterm - virtual terminal library, used by neovim
+  * obs-studio - stream video to the internet (twitch, etc...)
   * ruby-install - installs ruby/jruby/mruby/rubinius/maglev
   * wla_dx - more 6502 assemblers, focused on the nintendo
   * xrectsel - select rectangles in X!

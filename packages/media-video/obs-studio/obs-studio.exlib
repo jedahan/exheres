@@ -1,0 +1,29 @@
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake github [ user=jp9000 ]
+
+export_exlib_phases src_install
+
+SUMMARY="open source broadcasting software for twitch and more"
+HOMEPAGE="http://obsproject.com"
+
+LICENCES="BSD"
+SLOT="0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/jansson
+        media/ffmpeg
+        media-libs/x264
+        x11-libs/qtx11extras:5
+"
+
+obs-studio_src_install() {
+    cmake_src_install
+
+    if [[ $LIBDIR != lib ]]; then
+        edo mv "${IMAGE}"/usr/lib "${IMAGE}"/usr/${LIBDIR}
+    fi
+}
