@@ -1,0 +1,17 @@
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=neovim ]
+
+SUMMARY="Experimental libvterm fork for neovim, for terminal emulation"
+HOMEPAGE="http://www.leonerd.org.uk/code/libvterm"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+src_prepare() {
+  edo sed -e "s|lib$|${LIBDIR}|" -i Makefile
+  edo sed -e "s|local$||" -i Makefile
+}
