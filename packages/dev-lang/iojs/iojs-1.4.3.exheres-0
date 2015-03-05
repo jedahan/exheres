@@ -1,7 +1,7 @@
-# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public Licesnse v2
 
-require github [ pn="io.js" tag="v${PV}" ]
+require github [ user="iojs" pn="io.js" tag="v${PV}" ]
 
 SUMMARY="A friendly fork of Node.js with an open governance model"
 LICENCES="MIT"
