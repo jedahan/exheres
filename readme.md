@@ -8,6 +8,7 @@ includes hit software such as:
   * deliver - heroku-like deploy for your own servers
   * fceux - a nintendo/famicom emulator
   * ffcast - record a screencast simply and quickly
+  * htc_9271 - firmware for atheros 9271 usb wifi
   * ix - a nerdy pastebin cli
   * iojs - a friendly fork of nodejs
   * kryoflux-bin - read old floppy disks with kryoflux 

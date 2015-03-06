@@ -1,0 +1,27 @@
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Firmware for htc_9271 usb ethernet driver"
+
+HOMEPAGE="https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git"
+DOWNLOADS=""
+
+LICENCES="ath9k-htc"
+SLOT="0"
+PLATFORMS="~amd64"
+
+WORK="${WORKBASE}"
+
+src_fetch_extra() {
+    edo wget -O "${FETCHEDDIR}"/${PN}.fw "${HOMEPAGE}/plain/${PN}.fw"
+}
+
+src_unpack() {
+    cp "${FETCHEDDIR}"/${PN}.fw .
+}
+
+src_install() {
+    insinto "${LIBDIR}"/firmware
+    doins -r ${PN}.fw
+}
+
