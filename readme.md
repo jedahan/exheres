@@ -13,6 +13,7 @@ includes hit software such as:
   * iojs - a friendly fork of nodejs
   * kryoflux-bin - read old floppy disks with kryoflux 
   * libhackrf - hackrf sdr library for gnuradio
+  * libtins - high level C++ network packet library
   * libvterm - virtual terminal library, used by neovim
   * obs-studio - stream video to the internet (twitch, etc...)
   * ruby-install - installs ruby/jruby/mruby/rubinius/maglev

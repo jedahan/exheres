@@ -1,0 +1,24 @@
+# Copyright 2015 Jonathan Dahan
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake github [ user=mfontanini tag=v${PV} ]
+
+SUMMARY="High level C++ network packet library"
+
+LICENCES="libtins"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libpcap
+        dev-libs/openssl
+"
+
+CMAKE_SRC_CONFIGURE_PARAMS=( -DLIBTINS_ENABLE_CXX11=1 )
+
+src_install() {
+   cmake_src_install
+   [ $LIBDIR != lib ] && edo mv "${IMAGE}"/usr/{lib,${LIBDIR}}
+}
