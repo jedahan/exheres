@@ -22,8 +22,5 @@ DEPENDENCIES="
 
 obs-studio_src_install() {
     cmake_src_install
-
-    if [[ $LIBDIR != lib ]]; then
-        edo mv "${IMAGE}"/usr/lib "${IMAGE}"/usr/${LIBDIR}
-    fi
+    [[ $LIBDIR != lib ]] && edo mv "${IMAGE}"/usr/{lib,${LIBDIR}}
 }
