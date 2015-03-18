@@ -1,0 +1,15 @@
+Title: x11-misc/bar has been renamed to x11-misc/lemonbar
+Author: Jonathan Dahan <jonathan@jonathan.is>
+Content-Type: text/plain
+Posted: 2015-03-18
+Revision: 1
+News-Item-Format: 1.0
+Display-If-Installed: x11-misc/bar
+
+Please install x11-misc/lemonbar *after* uninstalling x11-misc/bar:
+
+cave uninstall x11-misc/bar --execute
+cave resolve x11-misc/lemonbar --execute
+
+This only matters if you've installed a recent scm version of x11-misc/bar
+which was renamed already to lemonbar.

@@ -1,10 +1,10 @@
-# Copyright 2014 Jonathan Dahan <jonathan@jonathan.is>
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public
 
+MY_PN=bar
 require github [ user=LemonBoy ]
 
 SUMMARY="lightweight bar entirely based on xcb"
-HOMEPAGE="https://github.com/lemonboy/bar"
 
 LICENCES="GPL-3"
 SLOT="0"
