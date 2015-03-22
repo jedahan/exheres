@@ -19,3 +19,13 @@ includes hit software such as:
   * ruby-install - installs ruby/jruby/mruby/rubinius/maglev
   * wla_dx - more 6502 assemblers, focused on the nintendo
   * xrectsel - select rectangles in X!
+
+#### License
+
+  Everything here is dedicated to the public domain.
+
+  In jurisdictions where the public domain is not recognized,
+  everything is licensed under [CC0]().
+
+  For the purposes of being included in ::unavailable-unoffical, I must
+  dual-license as [GPL-2]() :(
