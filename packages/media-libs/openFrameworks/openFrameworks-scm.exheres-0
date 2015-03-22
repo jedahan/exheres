@@ -1,0 +1,59 @@
+# Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_SECONDARY_REPOSITORIES="projectGeneratorSimple"
+SCM_EXTERNAL_REFS="apps/projectGenerator/projectGeneratorSimple:projectGeneratorSimple"
+SCM_projectGeneratorSimple_REPOSITORY="https://github.com/ofZach/projectGeneratorSimple.git"
+
+require github [ user='openframeworks' ] scm-git
+
+SUMMARY="C++ creative coding framework"
+SLOT="0"
+LICENCES="MIT"
+
+PLATFORMS="~amd64"
+
+# we always want debugging symbols
+# if we try to strip, it fails on android .so files
+# and leaves empty directories which fail on merge
+RESTRICT="strip"
+
+DEPENDENCIES="
+    build+run:
+        dev-python/lxml
+        media-libs/FreeImage
+        media-libs/freetype:2
+        media-libs/glew
+        media-libs/gstreamer:1.0
+        media-libs/libsndfile
+        media-libs/openal
+        media-libs/opencv
+        media-plugins/gst-libav
+        media-plugins/gst-plugins-bad:1.0
+        media-plugins/gst-plugins-base:1.0
+        media-plugins/gst-plugins-good:1.0
+        x11-libs/cairo
+        x11-dri/freeglut
+        x11-dri/glu
+        x11-libs/gtk+:3
+"
+
+src_compile() {
+    edo cd libs/openFrameworksCompiled/project
+    edo make Release PLATFORM_OS=Linux
+}
+
+src_install() {
+    dodoc -r docs tutorials *.md
+
+    insinto /usr/src/${PN}
+    doins -r addons apps examples libs
+
+    dodir /usr/src/${PN}/scripts
+    insinto /usr/src/${PN}/scripts
+    doins -r scripts/{apothecary,dev,linux}
+}
+
+src_postinst() {
+    elog "${PN} has been installed to /usr/src/${PN}"
+}
