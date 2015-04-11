@@ -11,7 +11,6 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
 
-src_prepare() {
-  edo sed -e "s|lib$|${LIBDIR}|" -i Makefile
-  edo sed -e "s|local$||" -i Makefile
-}
+DEFAULT_SRC_COMPILE_PARAMS=( PREFIX=/usr/$(exhost --target) )
+DEFAULT_SRC_INSTALL_PARAMS=( "${DEFAULT_SRC_COMPILE_PARAMS[@]}" )
+
