@@ -30,15 +30,6 @@ src_configure() {
     edo ./configure "${SRC_CONFIGURE_PARAMS[@]}"
 }
 
-src_install() {
-    default
-
-    if [[ $LIBDIR != lib ]]; then
-        edo mv "${IMAGE}/usr/lib" "${IMAGE}/usr/${LIBDIR}"
-        dosym "/usr/${LIBDIR}/node_modules/npm/bin/npm-cli.js" "/usr/bin/npm"
-    fi
-}
-
 src_test() {
     esandbox allow_net "inet:0.0.0.0@0"
     esandbox allow_net "inet:0.0.0.0@12346"
