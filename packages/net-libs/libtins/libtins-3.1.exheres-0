@@ -18,7 +18,3 @@ DEPENDENCIES="
 
 CMAKE_SRC_CONFIGURE_PARAMS=( -DLIBTINS_ENABLE_CXX11=1 )
 
-src_install() {
-   cmake_src_install
-   [ $LIBDIR != lib ] && edo mv "${IMAGE}"/usr/{lib,${LIBDIR}}
-}
