@@ -12,6 +12,14 @@ PLATFORMS="~amd64"
 
 WORK="${WORKBASE}"
 
+DEPENDENCIES="
+    build+run:
+        !firmware/linux-firmware [[
+            description = [ linux-firmware already contains this firmware ]
+            resolution = manual
+        ]]
+"
+
 src_fetch_extra() {
     edo wget -O "${FETCHEDDIR}"/${PN}.fw "${HOMEPAGE}/plain/${PN}.fw"
 }
