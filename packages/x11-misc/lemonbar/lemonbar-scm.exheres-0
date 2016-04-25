@@ -24,3 +24,10 @@ DEFAULT_SRC_INSTALL_PARAMS=(
     PREFIX=/usr/$(exhost --target)
 )
 
+src_install() {
+    dodir /usr/$(exhost --target)/bin
+    dobin lemonbar
+    emake doc
+    doman lemonbar.1
+}
+
