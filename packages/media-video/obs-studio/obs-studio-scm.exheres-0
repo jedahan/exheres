@@ -1,6 +1,11 @@
 # Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public License v2
 
+SCM_EXTERNAL_REFS="
+    plugins/win-dshow/libdshowcapture:
+    plugins/mac-syphon/syphon-framework:
+"
+
 require obs-studio
 
 PLATFORMS="~amd64"

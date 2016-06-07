@@ -1,0 +1,42 @@
+Upstream: https://github.com/jp9000/obs-studio/pull/552
+
+From c4f820793d0903400894700a9af3e3167cb1c65c Mon Sep 17 00:00:00 2001
+From: Timo Gurr <timo.gurr@gmail.com>
+Date: Tue, 7 Jun 2016 16:18:55 +0200
+Subject: [PATCH] Allow to install architecture independent data outside of
+ prefix
+
+This allows installing the architecture independent data outside
+the prefix, for example on a multiarch layout where the prefix
+is /usr/{host-triplet}.
+---
+ CMakeLists.txt     | 1 +
+ obs/CMakeLists.txt | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8df8f9d..1d4f8db 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -6,6 +6,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+ 
+ include(ObsHelpers)
+ include(ObsCpack)
++include(GNUInstallDirs)
+ 
+ if(MSVC AND NOT EXISTS "${CMAKE_BINARY_DIR}/ALL_BUILD.vcxproj.user")
+ 	file(GENERATE
+diff --git a/obs/CMakeLists.txt b/obs/CMakeLists.txt
+index c98b9bc..4185188 100644
+--- a/obs/CMakeLists.txt
++++ b/obs/CMakeLists.txt
+@@ -228,7 +228,7 @@ install_obs_core(obs)
+ install_obs_data(obs data obs-studio)
+ 
+ if (UNIX AND UNIX_STRUCTURE AND NOT APPLE)
+-	install(FILES dist/obs.desktop DESTINATION share/applications)
++	install(FILES dist/obs.desktop DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/applications)
+ 	install(FILES forms/images/obs.png
+-		DESTINATION share/icons/hicolor/256x256/apps)
++		DESTINATION ${CMAKE_INSTALL_FULL_DATAROOTDIR}/icons/hicolor/256x256/apps)
+ endif()
