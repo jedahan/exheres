@@ -16,6 +16,7 @@ MYOPTIONS="
     jack
     pulseaudio
     v4l
+    vlc [[ description = [ Support adding video playlists via libvlc ] ]]
     ( providers: eudev systemd ) [[ number-selected = exactly-one ]]
     ( providers: ffmpeg libav ) [[ number-selected = exactly-one ]]
     ( providers: libressl openssl ) [[ number-selected = exactly-one ]]
@@ -48,6 +49,7 @@ DEPENDENCIES="
             providers:eudev? ( sys-apps/eudev )
             providers:systemd? ( sys-apps/systemd )
         )
+        vlc? ( media/vlc )
 "
 
 CMAKE_SRC_CONFIGURE_PARAMS=(
@@ -68,6 +70,7 @@ CMAKE_SRC_CONFIGURE_OPTION_DISABLE_FINDS=(
     'pulseaudio PulseAudio'
     'v4l LibUDev'
     'v4l Libv4l2'
+    'vlc LibVLC'
 )
 
 CMAKE_SRC_CONFIGURE_TESTS=(
