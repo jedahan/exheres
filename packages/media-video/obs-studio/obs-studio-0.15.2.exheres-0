@@ -5,7 +5,3 @@ require obs-studio
 
 PLATFORMS="~amd64"
 
-DEFAULT_SRC_PREPARE_PATCHES=(
-    "${FILES}"/${PN}-pr562.patch
-)
-
