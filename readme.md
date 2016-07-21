@@ -15,7 +15,6 @@ includes hit software such as:
   * libhackrf - hackrf sdr library for gnuradio
   * libtins - high level C++ network packet library
   * libvterm - virtual terminal library, used by neovim
-  * obs-studio - stream video to the internet (twitch, etc...)
   * ruby-install - installs ruby/jruby/mruby/rubinius/maglev
   * wla_dx - more 6502 assemblers, focused on the nintendo
   * xrectsel - select rectangles in X!
