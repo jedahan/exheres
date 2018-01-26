@@ -9,14 +9,21 @@ HOMEPAGE="https://github.com/lolilolicon/ffcast"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+MYOPTIONS="
+    ( providers: ffmpeg libav ) [[ number-selected = exactly-one ]]
+"
 
 DEPENDENCIES="
     build+run:
-        media/libav
+        x11-apps/xdpyinfo
+        x11-apps/xprop
         x11-apps/xrectsel
         x11-apps/xwininfo
         x11-libs/libX11
+        providers:ffmpeg? ( media/ffmpeg )
+        providers:libav? ( media/libav )
+    recommendation:
+        media-gfx/ImageMagick [[ description = [ allow usage of trim feature ] ]]
 "
 
 WORK="${WORKBASE}/${PNV//f/F}"
