@@ -1,6 +1,8 @@
 # Copyright 2015 Jonathan Dahan <jonathan@jonathan.is>
 # Distributed under the terms of the GNU General Public License v2
 
+GITHUB_TAG=0c4f9b847822a4f07c382596def5dcb3180b5659
+
 require libvterm
 
 PLATFORMS="~amd64"
