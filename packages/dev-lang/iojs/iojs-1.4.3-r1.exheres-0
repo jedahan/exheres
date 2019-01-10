@@ -16,7 +16,8 @@ DEPENDENCIES="
         dev-libs/libpthread-stubs
         sys-libs/zlib
         dev-libs/libuv[>=1.4.0]
-        virtual/libssl
+        providers:libressl? ( dev-libs/libressl:= )
+        providers:openssl? ( dev-libs/openssl )
 "
 
 SRC_CONFIGURE_PARAMS=(
