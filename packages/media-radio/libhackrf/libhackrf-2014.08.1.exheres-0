@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 MY_PN="hackrf"
-require cmake github [ user=mossmann tag=v${PV} ]
+require cmake [ api=2 ] github [ user=mossmann tag=v${PV} ]
 
 SUMMARY="HackRF support for gr-osmocom"
 HOMEPAGE="https://greatscottgadgets.com/hackrf/"
@@ -19,11 +19,5 @@ DEPENDENCIES="
 
 BUGS_TO="jonathan@jonathan.is"
 
-WORK="${WORK}/host/${PN}"
-CMAKE_SOURCE="${WORK}"
+CMAKE_SOURCE="${WORKBASE}/${MY_PN}-${PV}/host/${PN}"
 
-CMAKE_SRC_CONFIGURE_PARAMS=( -DLIB_INSTALL_DIR:STRING=${LIBDIR} )
-
-src_prepare(){
-    edo sed -e 's|lib/pkgconfig|${LIB_INSTALL_DIR}/pkgconfig|' -i CMakeLists.txt
-}
