@@ -8,12 +8,15 @@ SUMMARY="High level C++ network packet library"
 LICENCES="BSD-2"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
+MYOPTIONS="
+    ( providers: libressl openssl ) [[ number-selected = exactly-one ]]
+"
 
 DEPENDENCIES="
     build+run:
         dev-libs/libpcap
-        dev-libs/openssl
+        providers:libressl? ( dev-libs/libressl:= )
+        providers:openssl? ( dev-libs/openssl )
 "
 
 CMAKE_SRC_CONFIGURE_PARAMS=( -DLIBTINS_ENABLE_CXX11=1 )
