@@ -34,7 +34,8 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     run:
-        dev-lang/python:*
+        app-shells/bash
+        net-misc/curl
 "
 
 WORK="${WORKBASE}"
