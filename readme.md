@@ -14,7 +14,6 @@ includes hit software such as:
   * kryoflux-bin - read old floppy disks with kryoflux 
   * libhackrf - hackrf sdr library for gnuradio
   * libtins - high level C++ network packet library
-  * libvterm - virtual terminal library, used by neovim
   * ruby-install - installs ruby/jruby/mruby/rubinius/maglev
   * wla_dx - more 6502 assemblers, focused on the nintendo
   * xrectsel - select rectangles in X!
